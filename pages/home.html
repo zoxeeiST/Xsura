@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xsura</title>
+    <link rel="stylesheet" href="/pages/home.css">
+</head>
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="/background/polygons.mp4" type="video/mp4">
+    </video>
+    <audio id="background-music" autoplay>
+        <source src="/music/Mo Beats - Righteous (pepe lore song).mp3" type="audio/mpeg">
+    </audio>
+    <main>
+        <section>
+            <div class="profile-container">
+                <div class="image-container">
+                    <img src="/images/assassin.png" alt="Profile Image">
+                </div>
+            </div>
+            <h1>ZEUN</h1>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-music');
+            var playPromise = audio.play();
+
+            if (playPromise !== undefined) {
+                playPromise.then(function() {
+                }).catch(function(error) {
+                    document.body.addEventListener('click', function() {
+                        audio.play();
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
